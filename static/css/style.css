@@ -1,0 +1,105 @@
+/* Nav Bar */
+.container-fluid div, .container-fluid a {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item .active {
+    background-color: yellow;
+    border-bottom: 5px solid darkturquoise;
+    bottom: -10px;
+}
+
+.nav-item {
+    border: 1px dotted gray;
+    background-color: white;
+}
+
+.nav-item:hover {
+    background-color: lightyellow;
+    border-bottom: 1px solid darkturquoise;
+    bottom: -10px;
+}
+
+/* Footer */
+footer {
+    color: black;
+}
+
+/* Image control */
+img{
+     max-width: 100%;
+     max-height: 100%;
+}
+
+.image-container {
+     width: 40px;
+     height: 40px;
+}
+
+/* General page controls */
+.left-side, .right-side {
+    width: 100%;
+}
+
+.center-form {
+  display:flex;
+  justify-content: center;
+}
+
+.center {
+  display:flex;
+  justify-content: center;
+}
+
+select option:disabled {
+    display:none;
+}
+
+.hideBulletPoints {
+    list-style: none;
+}
+
+
+/* Microservice control */
+#imageOfTheDay {
+     width: 300px;
+     height: 300px;
+}
+
+#IOTD {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 50px;
+}
+
+.wikia {
+    height: 150px;
+    overflow-y: scroll;
+    background-color: lightgoldenrodyellow;
+    text-indent: 50px;
+}
+
+/* Youtube Video iframs */
+iframe {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+#sessionNotice {
+    font-size: 12px
+}
+
+/* Code data control */
+.code-container {
+    /*
+    Container for the code data details.
+    */
+    margin-left: 2%;
+    margin-right: 2%;
+    background: whitesmoke;
+}
+
+.code-data code {
+    background: lightyellow;
+}
