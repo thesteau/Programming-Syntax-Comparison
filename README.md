@@ -8,7 +8,7 @@ Add main.py
 
 
 ## Privacy
-Unfortunately, API keys stored in the "private" directory will not be included in this public repository. 
+Unfortunately, API keys stored in the "private" directory will not be included in this public repository.  
 You can recreate the private key file as followed:  
 ```python
 class PrivateKeys:
@@ -29,6 +29,13 @@ class PrivateKeys:
 ```
 For Firebase credentials, you will need to initiate Firebase and replace the appropriate code accordingly.  
 Thereafter, save the Firebase key into the private directory.
+
+Private directory
+```graphql
+└─ private/
+    ├─ private.py         # Contains the PrivateKeys class
+    └─ firebaseKeys.json  # Firebase credentials
+```
 
 ## Author
 Steven Au
