@@ -54,25 +54,18 @@ class RouteData:
         youtube_key1 = {}
         youtube_key2 = {}
 
+        default_video = "zOjov-2OZ0E"
+
         youtube1 = self.get_videos(session["language"], session["topic"])
         youtube2 = self.get_videos(session["language2"], session["topic"])
 
+        # The items are in a list, since I am only requesting 5, look range up to 5.
+        # This is also increase I decide to increase the amount of IDS to be queried later, my own restriction is
+        # up to 5 results for my own requests.
         for each_value in range(5):
-            # The items are in a list, since I am only requesting 5, look range up to 5.
-            # This is also increase I decide to increase the amount of IDS to be queried later, my own restriction is
-            # up to 5 results for my own requests.
-            try:
-                video1 = youtube1[each_value]["id"]["videoId"]
-            except:
-                video1 = "zOjov-2OZ0E"
-            try:
-                video2 = youtube2[each_value]["id"]["videoId"]
-            except:
-                video2 = "zOjov-2OZ0E"
-
-            # USe the numbers as a string hard coded.
-            youtube_key1.update({str(each_value): video1})
-            youtube_key2.update({str(each_value): video2})
+            # Use the numbers as a key.
+            youtube_key1.update({str(each_value): self.try_passer(youtube1[each_value]["id"]["videoId"], default_video)})
+            youtube_key2.update({str(each_value): self.try_passer(youtube2[each_value]["id"]["videoId"], default_video)})
 
         data = {
             "youtube1": youtube_key1,
@@ -80,7 +73,6 @@ class RouteData:
         }
 
         return data
-
 
     def get_wikipedia(self, query):
         """ Fetch wikipedia data
