@@ -4,8 +4,15 @@
 Add details on how to access and use the app  
 Add main.py
 
-### Website Schematics
+## Microservice Architecture
 
+## Data
+
+
+## Website Schematics
+```graphql
+
+```
 
 ## Privacy
 Unfortunately, API keys stored in the "private" directory will not be included in this public repository.  
