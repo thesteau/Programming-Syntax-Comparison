@@ -1,0 +1,81 @@
+<div class="center-form">
+  <form method="post">
+    <p><strong>Instructions:</strong></p>
+    <ol>
+      <li>Choose two languages from the dropdown form. (Language 1 and Language 2)</li>
+      <li>Select a programming concept.</li>
+      <li>Click the "Submit" button.</li>
+    </ol>
+    <fieldset>
+      <legend>Choose two languages:</legend>
+      <div>
+        <label for="language">Language 1:</label>
+        <select id="language" name="language" required>
+          <option selected="true" disabled value="">Click Here</option>
+          {% for each_item in items %}
+            {% if data.language == each_item %}
+              <option selected="true" value="{{ each_item }}">{{ each_item }}</option>
+            {% else %}
+              <option value="{{ each_item }}">{{ each_item }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      <label for="language2">Language 2:</label>
+        <select id="language2" name="language2" required>
+          <option selected="true" disabled value="">Click Here</option>
+          {% for each_item in items %}
+            {% if data.language2 == each_item %}
+              <option selected="true" value="{{ each_item }}">{{ each_item }}</option>
+            {% else %}
+              <option value="{{ each_item }}">{{ each_item }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+      <em>Note: Only the languages within the dropdowns are supported at this time.</em>
+    </fieldset>
+
+    <fieldset>
+      <div>
+      <legend >Select a concept:</legend>
+        <em>If the concept is not available in the selection below, <br> feel free to select "Other" and type out a concept that you would like to learn more about.</em><br>
+
+        {% for each_concept in concepts %}
+          {% if data.topic == each_concept %}
+            <input checked type="radio" id="{{ each_concept|replace(' ', '_') }}" name="topic" value="{{ each_concept }}" required>
+          {% else %}
+            <input type="radio" id="{{ each_concept|replace(' ', '_') }}" name="topic" value="{{ each_concept }}" required>
+          {% endif %}
+          <label for="{{ each_concept|replace(' ', '_') }}">{{ each_concept }}</label><br>
+        {% endfor %}
+
+      <!--    Because this if-else block structure below is different than the above, this "other" entry section is excluded from the above for loop.  -->
+        {% if (data.other != "") and (data.initialized == "true") %}
+          <input checked type="radio" name="topic" value="other" id="other"> Other:
+          {% if data.other == "null" %}
+            <input type="text" name="other" id="otherText" placeholder="Type a concept here"/>
+          {% else %}
+            <input type="text" name="other" id="otherText" placeholder="Type a concept here" value="{{ data.other }}"/>
+          {% endif %}
+        {% else %}
+          <input type="radio" name="topic" value="other" id="other"> Other:
+          <input type="text" name="other" id="otherText" placeholder="Type a concept here"/>
+        {% endif %}
+      </div>
+    </fieldset>
+    <input type="submit" name="formButton" value="Submit" id="formSubmit">
+    {% if data.initialized == "true" %}
+      <!--  Inline onclick event due to variation in the message below based on the initialized boolean check  -->
+      <input type="submit" name="formButton" value="Reset" id="formReset" onclick="return confirm('Are you sure? \nThis will reset the current form and delete your previous form history.')">
+    {% else %}
+      <input type="reset" name="formButton" value="Reset" id="formReset" onclick="return confirm('Are you sure? \nThis will reset the current form.')">
+    {% endif %}
+
+    <div class="center alert alert-danger" id="submitMessage" hidden>
+      <div>
+        To reduce server load and request costs, a 20 second timer was implemented.
+        <br>Please wait: <span id="timeRemainder">20</span> second(s) to make a new submission.
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}Syntax{% endblock %}
+
+{% block content %}
+<div hidden id="pageName">syntax</div>
+<h1 class="center">Syntax Comparison -
+    {% if data.topic == "other" %}
+        <em>- Search:
+            {% if data.other == '' %}
+                None
+            {% else %}
+                {{ data.other }}
+            {% endif %}
+        </em>
+    {% else %}
+        {{ data.topic }}
+    {% endif %}
+</h1>
+<div class="row">
+  <div class="col">
+    <div class="left-side">
+        <h1 class="center">{{ data.language }}</h1>
+        <div class="code-container">
+            <div id="left-data" class="code-data">
+                {% for item in data2.Syntax1 %}
+                    {% if item=="NaN" %}
+                        <p hidden></p>
+                    {% elif item.startswith("#l", 0, 2) %}
+                        <a href="{{item[2:]}}" target="_blank"> {{ item[2:] }}</a>
+                    {% elif item.startswith("#", 0, 1) %}
+                        <p>{{item[1:]|safe}}</p>
+                    {% else %}
+                        <p><code>{{item|safe}}</code></p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="right-side">
+        <h1 class="center">{{ data.language2 }}</h1>
+        <div class="code-container">
+            <div id="right-data" class="code-data">
+                {% for item in data2.Syntax2 %}
+                    {% if item=="NaN" %}
+                        <p hidden></p>
+                    {% elif item.startswith("#l", 0, 2) %}
+                        <a href="{{item[2:]}}" target="_blank"> {{ item[2:] }}</a>
+                    {% elif item.startswith("#", 0, 1) %}
+                        <p>{{item[1:]|safe}}</p>
+                    {% else %}
+                        <p><code>{{item|safe}}</code></p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+activePageCheck()
+syntaxEqualizer()
+{% endblock %}

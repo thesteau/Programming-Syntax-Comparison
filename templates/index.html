@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block title %}Selection{% endblock %}
+{% block content %}
+<div hidden id="pageName">selection</div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <!--   Source:
+        Citation for the following:
+        Date: 2/4/2022
+        URL: https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/
+        Flask flash messages template and how to incorporated with bootstrap.
+         -->
+      <h1 class="center alert alert-danger">{{ message }}</h1>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<!-- Get the current time to determine form submission-->
+{% if data3 %}
+  <p id="dateLastSubmitted" hidden>{{ data3 }}</p>
+{% endif %}
+
+<h1 class="center">Programming Language Comparison</h1>
+<h1 class="center">Selection</h1>
+
+{% include "form.html" %}
+
+<br>
+<div class="center">
+      <h3><em>Motivator</em></h3>
+</div>
+<div>
+  <div class="center">
+    <ul class="hideBulletPoints">
+      <li>
+            Below are two examples of multiple programming languages and Web Languages (HTML, CSS) working together.
+      </li>
+      <li>
+            The image is fetched through Python and it is delivered here through the use of JavaScript, CSS, and HTML!
+      </li>
+      <li>
+            Likewise to the time displayed below the image, but instead, it can also fetched all through one language: JavaScript.
+      </li>
+      <li>
+            Click on the button "Update Image and Time" below "and see the languages make their requests in real time!
+      </li>
+    </ul>
+    </div>
+</div>
+<div>
+  <div id="images" class="center">
+    <p id="IOTD">Image of the Day</p>
+</div>
+
+<div class="center">
+  <img id="imageOfTheDay">
+</div>
+
+  <p class="center"><em>“The most damaging phrase in the language is 'We've always done it this way'.”</em> -- Grace Murray Hopper</p>
+  <div class="center">
+    <p><strong>Time (Pacific): </strong><span id="time"></span></p>
+  </div>
+  <div class="center" id="sessionNotice">
+    <div><strong>Important: This site uses a temporary time stamped session to track your form submissions
+    </strong>
+      <div class="center"><strong>Session data will not be saved.</strong> </div>
+    </div>
+  </div>
+      <div class="center">
+      <button onclick="getTime(); getImage()" id="updateButton">Update Image and Time</button>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+activePageCheck();
+getImage();
+getTime();
+
+// Show the time every 60 seconds
+setInterval(getTime, 60000);
+document.getElementById("updateButton").addEventListener("click", pauseUpdateButton);
+
+checkSubmission()
+
+{% endblock %}

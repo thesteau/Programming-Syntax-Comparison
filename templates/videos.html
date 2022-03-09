@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}Videos{% endblock %}
+
+{% block content %}
+<div hidden id="pageName">videos</div>
+<h1 class="center">First 5 YouTube Videos -
+    {% if data.topic == "other" %}
+    <em>- Search:
+        {% if data.other == '' %}
+            None
+        {% else %}
+            {{ data.other }}
+        {% endif %}
+    </em>
+    {% else %}
+        {{ data.topic }}
+    {% endif %}
+</h1>
+<div class="row">
+    <div class="col">
+        <div class="left-side">
+            <h1 class="center">{{ data.language }}</h1>
+            <div>
+                {% for each_idx, video in data2.youtube1.items() %}
+                    <iframe src="https://www.youtube.com/embed/{{ video }}" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="right-side">
+            <h1 class="center">{{ data.language2 }}</h1>
+            <div>
+                {% for each_idx, video in data2.youtube2.items() %}
+                    <iframe src="https://www.youtube.com/embed/{{ video }}" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+activePageCheck()
+{% endblock %}

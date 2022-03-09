@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block title %}Details{% endblock %}
+
+{% block content %}
+<div hidden id="pageName">details</div>
+<h1 class="center">Language Details -
+    {% if data.topic == "other" %}
+        <em>- Search:
+            {% if data.other == '' %}
+                None
+            {% else %}
+                {{ data.other }}
+            {% endif %}
+        </em>
+    {% else %}
+        {{ data.topic }}
+    {% endif %}
+</h1>
+<div id="main">
+  <div class="row">
+    <div class="col md-6">
+      <div class="left-side">
+          <h1 class="center">{{ data.language }}</h1>
+          <p class="center">Wikipedia summary of {{ data.language }}</p>
+          <p class="wikia">{{ data3.wikipedia1 }}</p>
+        <hr>
+          <p class="center">Syntax details for {{ data.language }} {{data.topic}}</p>
+          <div class="code-container">
+              <div id="left-data" class="code-data">
+                {% for item in data4.Syntax1 %}
+                    {% if item=="NaN" %}
+                        <p hidden></p>
+                    {% elif item.startswith("#l", 0, 2) %}
+                        <a href="{{item[2:]}}" target="_blank"> {{ item[2:] }}</a>
+                    {% elif item.startswith("#", 0, 1) %}
+                        <p>{{item[1:]|safe}}</p>
+                    {% else %}
+                        <p><code>{{item|safe}}</code></p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+          </div>
+          <hr>
+          <p class="center">Youtube Videos for {{data.language}} {{data.topic}}</p>
+            <div class="left-videos">
+                {% for each_idx, video in data2.youtube1.items() %}
+                    <iframe src="https://www.youtube.com/embed/{{ video }}" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                {% endfor %}
+            </div>
+      </div>
+    </div>
+
+    <div class="col md-6">
+      <div class="right-side">
+          <h1 class="center">{{ data.language2 }}</h1>
+          <p class="center">Wikipedia summary of {{ data.language2 }}</p>
+          <p class="wikia">{{ data3.wikipedia2 }}</p>
+          <hr>
+          <p class="center">Syntax details for {{ data.language2 }} {{data.topic}}</p>
+          <div class="code-container">
+              <div id="right-data" class="code-data">
+                {% for item in data4.Syntax2 %}
+                    {% if item=="NaN" %}
+                        <p hidden></p>
+                    {% elif item.startswith("#l", 0, 2) %}
+                        <a href="{{item[2:]}}" target="_blank"> {{ item[2:] }}</a>
+                    {% elif item.startswith("#", 0, 1) %}
+                        <p>{{item[1:]|safe}}</p>
+                    {% else %}
+                        <p><code>{{item|safe}}</code></p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+          </div>
+          <hr>
+          <p class="center">Youtube Videos for {{data.language2}} {{data.topic}}</p>
+            <div class="right-videos">
+                {% for each_idx, video in data2.youtube2.items() %}
+                    <iframe src="https://www.youtube.com/embed/{{ video }}" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                {% endfor %}
+            </div>
+	  </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+activePageCheck()
+syntaxEqualizer()
+{% endblock %}
+
