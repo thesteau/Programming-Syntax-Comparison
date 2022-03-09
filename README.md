@@ -16,8 +16,8 @@ class PrivateKeys:
     """ Storage of all keys data and their processing """
 
     def __init__(self):
-        self.youtube_api = # Your API
-        self.unsplash_api = # Your API
+        self.youtube_api = ''   # Your API
+        self.unsplash_api = ''  # Your API
 
     def youtube(self):
         """ Youtube API private"""
