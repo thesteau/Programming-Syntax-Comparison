@@ -39,9 +39,6 @@ function pauseUpdateButton() {
 }
 
 function reloadHome() {
-    // Citation for the following:
-    // Date: 2/10/2022
-    // Source: https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/type
     // Detect if the load was a back button.
     let reloadType = performance.getEntriesByType("navigation")[0].type
 
