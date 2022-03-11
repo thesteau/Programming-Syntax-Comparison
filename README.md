@@ -1,18 +1,21 @@
 # Programming-Syntax-Comparison
 
-# TODO
+##### TODO
 Add details on how to access and use the app  
 Add main.py
 
 ## Microservice Architecture
+A wikipedia and timer data microservices are used for this website. 
 
 ## Data
+The database used is Firebase by Google.  
+See the data directory for the raw data.  
 
-
-## Website Schematics
-```graphql
-
-```
+## Navigation
+* Select the items from the form
+* Navigate to the other pages via the navigation bar
+* Note that this a 20 second timer in between subsequent form submissions - the submit button will be disabled until the timer ends.
+  * This is only noticed if the user returns to the form before the timer elapses.
 
 ## Privacy
 Unfortunately, API keys stored in the "private" directory will not be included in this public repository.  
@@ -37,7 +40,7 @@ class PrivateKeys:
 For Firebase credentials, you will need to initiate Firebase and replace the appropriate code accordingly.  
 Thereafter, save the Firebase key into the private directory.
 
-Private directory
+#### Directory
 ```graphql
 └─ private/
     ├─ private.py         # Contains the PrivateKeys class
