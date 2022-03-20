@@ -15,9 +15,8 @@ JSON API:
 Accessible via the following URL route:  
 https://programming-languages-compare.herokuapp.com/api
 
-## Project Recreation and Analysis
+## Project Recreation and Code Analysis
 Details to recreate this project is presented below. However, microservices may differ or become deprecated over time.  
-You may cite code snippets if and only if you have requested for my permission first. Otherwise, you do not have permission to present this project as your own.
 
 ## Data
 The database used is Firebase by Google.  
