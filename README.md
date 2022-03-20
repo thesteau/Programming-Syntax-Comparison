@@ -8,7 +8,7 @@ https://programming-languages-compare.herokuapp.com/
 3. Click the "Submit" button.
 
 ## Microservice Architecture
-A wikipedia and timer data microservices are used for this website. 
+Wikipedia scraper and timer data microservices are currently used for this website. 
 
 JSON API:  
 "Image of the Day"  
