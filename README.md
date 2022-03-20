@@ -1,5 +1,5 @@
 # Programming-Syntax-Comparison
-Programming syntax comparison web application for the purpose of easily identify nuances across multiple programming syntaxes.
+Programming syntax comparison web application for the purpose of easily identifing nuances across multiple programming syntaxes.
 
 See this project live:  
 https://programming-languages-compare.herokuapp.com/  
