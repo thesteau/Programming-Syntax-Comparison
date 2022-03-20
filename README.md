@@ -1,5 +1,5 @@
 # Programming-Syntax-Comparison
-Access and see this project live:  
+See this project live:  
 https://programming-languages-compare.herokuapp.com/  
 
 ## Instructions
