@@ -76,7 +76,7 @@ I always wanted to see the differences between programming languages yet the exi
 Steven Au
 
 ## Special Thanks
-Undisclosed team.
+Teammates' microservices.
 
 ## License
 See license for details
