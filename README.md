@@ -10,7 +10,7 @@ https://programming-languages-compare.herokuapp.com/
 ## Navigation
 * Submit the form as instructed to be redirected to the details page.
 * Navigate to the other pages via the navigation bar
-* Note that this a 20 second timer in between subsequent form submissions - the submit button will be disabled until the timer ends.
+* Note that there is a 20 second timer in between subsequent form submissions - the submit button will be disabled until the timer ends.
   * This is only noticed if the user returns to the form before the timer elapses.
 
 ## Microservice Architecture
