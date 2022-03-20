@@ -23,6 +23,15 @@ https://programming-languages-compare.herokuapp.com/api
 
 ## Project Recreation and Code Analysis
 Details to recreate this project is presented below. However, microservices may differ or become deprecated over time.  
+After downloading the dependencies, simply run the app via Python3 from the terminal.
+
+```
+python3 main.py
+```
+Alternatively
+```
+python [Directory of the code]main.py
+``
 
 ## Data
 The database used is Firebase by Google.  
