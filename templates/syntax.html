@@ -23,7 +23,7 @@
         <div class="code-container">
             <div id="left-data" class="code-data">
                 {% for item in data2.Syntax1 %}
-                    {% if item=="NaN" or item is None %}
+                    {% if item=="NaN" %}
                         <p hidden></p>
                     {% elif item.startswith("#l", 0, 2) %}
                         <a href="{{item[2:]}}" target="_blank"> {{ item[2:] }}</a>
@@ -43,7 +43,7 @@
         <div class="code-container">
             <div id="right-data" class="code-data">
                 {% for item in data2.Syntax2 %}
-                    {% if item=="NaN" or item is None %}
+                    {% if item=="NaN" %}
                         <p hidden></p>
                     {% elif item.startswith("#l", 0, 2) %}
                         <a href="{{item[2:]}}" target="_blank"> {{ item[2:] }}</a>
