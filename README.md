@@ -31,7 +31,7 @@ python3 main.py
 Alternatively
 ```
 python [Directory of the code]main.py
-``
+```
 
 ## Data
 The database used is Firebase by Google.  
