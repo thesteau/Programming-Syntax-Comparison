@@ -7,6 +7,12 @@ https://programming-languages-compare.herokuapp.com/
 2. Select a programming concept.
 3. Click the "Submit" button.
 
+## Navigation
+* Submit the form as instructed to be redirected to the details page.
+* Navigate to the other pages via the navigation bar
+* Note that this a 20 second timer in between subsequent form submissions - the submit button will be disabled until the timer ends.
+  * This is only noticed if the user returns to the form before the timer elapses.
+
 ## Microservice Architecture
 Wikipedia scraper and timer data microservices are currently used for this website. 
 
@@ -21,12 +27,6 @@ Details to recreate this project is presented below. However, microservices may 
 ## Data
 The database used is Firebase by Google.  
 See the data directory for the raw data.  
-
-## Navigation
-* Select the items from the form
-* Navigate to the other pages via the navigation bar
-* Note that this a 20 second timer in between subsequent form submissions - the submit button will be disabled until the timer ends.
-  * This is only noticed if the user returns to the form before the timer elapses.
 
 ## Privacy
 Unfortunately, API keys stored in the "private" directory will not be included in this public repository.  
