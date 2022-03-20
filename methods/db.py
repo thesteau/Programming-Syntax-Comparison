@@ -2,6 +2,7 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+from methods import route_functions as rf
 
 
 class DB:
@@ -28,4 +29,10 @@ class DB:
         if language == "C#":
             language = "Cs"
 
-        return data[language][topic]
+        # This process must be handled within this method, else the data is unable to process due to missing key error.
+        try:
+            syntax = data[language][topic]
+        except:
+            syntax = rf.RouteData.syntax_err
+
+        return syntax
