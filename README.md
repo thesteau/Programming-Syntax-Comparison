@@ -1,11 +1,19 @@
 # Programming-Syntax-Comparison
+Access and see this project live:  
+https://programming-languages-compare.herokuapp.com/  
 
-##### TODO
-Add details on how to access and use the app  
-Add main.py
+## Instructions
+1. Choose two languages from the dropdown form. (Language 1 and Language 2)
+2. Select a programming concept.
+3. Click the "Submit" button.
 
 ## Microservice Architecture
 A wikipedia and timer data microservices are used for this website. 
+
+JSON API:  
+"Image of the Day"  
+Accessible via the following URL route:  
+https://programming-languages-compare.herokuapp.com/api
 
 ## Data
 The database used is Firebase by Google.  
@@ -46,6 +54,9 @@ Thereafter, save the Firebase key into the private directory.
     ├─ private.py         # Contains the PrivateKeys class
     └─ firebaseKeys.json  # Firebase credentials
 ```
+
+## Motivation
+I always wanted to see the differences between programming languages yet the existing websites available only navigates and displays syntax details one by one. Instead, why not have the syntax displayed side by side as an easier method to understand programming language syntax nuances?
 
 ## Author
 Steven Au
